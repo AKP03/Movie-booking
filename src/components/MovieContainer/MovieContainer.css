@@ -1,0 +1,11 @@
+.card-container {
+  background-color: #c9ddf8;
+  max-width: 30rem;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}

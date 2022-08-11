@@ -1,0 +1,5 @@
+export { Auth } from './Auth/Auth'
+export { Movies } from './Movies/Movies'
+export { Booking } from './Booking/Booking'
+export { AddMovies } from './AddMovies/AddMovies'
+export { Error } from './Error/Error'

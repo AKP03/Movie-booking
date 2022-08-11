@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* --text-primary: #edd3c4; */
+  --text-primary: #c5c5c5;
+  --text-secondary: #666;
+  --primary-dark: #0079f2;
+  --primary-light: #6bb5ff;
+  --primary-dark-hover: #0053a6;
+  --primary-light-hover: #0f87ff;
+  --secondary-dark: #1d2233;
+  --secondary-light: #e6e6e6;
+  --secondary-dark-hover: #2a3244;
+  --bg-dark: #0e1424;
+  --bg-light: #fff;
+  --bg-modal-dark: #c9ddf8;
+  --bg-modal-light: #f5f5f5;
+  --black: #000;
+  --white: #fff;
+  --red: #ff0000;
+  --submit-btn: #1976d2;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  display: grid;
+}
+
+img,
+picture,
+video,
+canvas,
+iframe,
+svg {
+  display: block;
+  max-width: 100%;
+  max-inline-size: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-container {
+  flex-grow: 1;
+  margin-top: 3.4rem;
+  min-height: calc(100vh - 3.4rem);
+}
+
+.main-container .MuiGrid-root .main-body {
+  width: 70vw;
+  margin: 2rem auto 0rem 20rem;
+  padding: 1rem;
+}
+
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+  .main-container .MuiGrid-root .main-body {
+    width: 75vw;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .main-container .MuiGrid-root .main-body {
+    width: 80vw;
+    margin: 2rem auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  .main-container .MuiGrid-root .main-body {
+    width: 100vw;
+    margin-bottom: 3rem;
+    margin: 2rem auto;
+  }
+}
