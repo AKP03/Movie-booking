@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import { NonRequiredAuth, RequiredAuth } from '../components'
+import { Booked, NonRequiredAuth, RequiredAuth } from '../components'
 
 import { AddMovies, Auth, Booking, Error, Movies } from '../pages'
 
@@ -13,6 +13,7 @@ export const Router = () => {
         <Route path='/movies' element={<Movies />} />
         <Route path='/addmovies' element={<AddMovies />} />
         <Route path='/booking' element={<Booking />} />
+        <Route path='/booked' element={<Booked />} />
         <Route path='*' element={<Error />} />
       </Route>
     </Routes>

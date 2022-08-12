@@ -7,6 +7,7 @@ import { logoutUser } from '../../firebase/utils/auth'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { userLogout } from '../../redux/features/auth/authSlice'
+import { Button } from '@mui/material'
 
 export const Header = () => {
   const navigate = useNavigate()
@@ -64,22 +65,13 @@ export const Header = () => {
             spacing={1}
           >
             {user?.firstname && (
-              <Typography variant='h5' sx={{ color: 'var(--white)' }}>
-                Hii {user?.firstname}!!
+              <Typography variant='h5' sx={{ color: 'var(--primary-light)' }}>
+                Hii {user?.firstname}👋
               </Typography>
             )}
-            <Typography
-              textAlign='center'
-              sx={{
-                color: 'var(--white)',
-                cursor: 'pointer',
-                fontSize: '24px',
-                fontWeight: '500',
-              }}
-              onClick={logoutHandle}
-            >
+            <Button variant='contained' onClick={logoutHandle}>
               Logout
-            </Typography>
+            </Button>
           </Stack>
         )}
       </Container>

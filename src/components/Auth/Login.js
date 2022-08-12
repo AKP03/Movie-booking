@@ -120,6 +120,31 @@ export const Login = ({ setSignupForm }) => {
             Don't have an account? Sign Up
           </Button>
         </Box>
+        <Stack
+          component='div'
+          sx={{
+            border: '2px solid var(--bg-dark)',
+            borderRadius: '10px',
+            padding: '10px',
+            width: '100%',
+          }}
+          gap={1}
+        >
+          <Box
+            component='p'
+            sx={{ fontSize: '1rem', fontWeight: '500', textAlign: 'center' }}
+          >
+            Admin Credentials
+          </Box>
+          <Stack direction='row' gap={1}>
+            <Box>Login Id:</Box>
+            <Box sx={{ fontWeight: '600' }}>admin@gmail.com</Box>
+          </Stack>
+          <Stack direction='row' gap={1}>
+            <Box>Password:</Box>
+            <Box sx={{ fontWeight: '600' }}>Admin@1</Box>
+          </Stack>
+        </Stack>
       </Stack>
     </Container>
   )
