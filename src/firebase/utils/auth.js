@@ -60,15 +60,14 @@ const loginUser = async (
   userLogin,
   loadingAuth,
   navigate,
-  location,
-  isAdmin
+  location
 ) => {
   const { email, password } = loginData
   dispatch(loadingAuth(true))
-  // console.log(isAdmin)
+
   try {
     const res = await signInWithEmailAndPassword(auth, email, password)
-    dispatch(userLogin(res.user.uid, isAdmin))
+    dispatch(userLogin(res.user.uid))
     localStorage.setItem('userId', res.user.uid)
     navigate(location.state?.from?.pathname || '/movies')
     Toast({ message: 'Logged in successfully', type: 'success' })

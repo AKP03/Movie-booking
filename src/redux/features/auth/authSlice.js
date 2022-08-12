@@ -14,14 +14,17 @@ const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
+    userAdmin: (state, action) => {
+      state.isAdmin = action.payload
+    },
     userLogin: (state, action) => {
       state.id = action.payload
       state.isLoggedIn = true
-      state.isAdmin = action.payload
     },
     userLogout: (state) => {
       state.id = null
       state.isLoggedIn = false
+      state.isAdmin = false
       state.user = {}
       localStorage.removeItem('userId')
     },
@@ -46,6 +49,6 @@ const authSlice = createSlice({
   },
 })
 
-export const { userLogin, userLogout, loadingAuth, loadingUser } =
+export const { userAdmin, userLogin, userLogout, loadingAuth, loadingUser } =
   authSlice.actions
 export default authSlice.reducer

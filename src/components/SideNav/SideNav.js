@@ -2,8 +2,11 @@ import React from 'react'
 import { Grid, Chip, Stack, Button } from '@mui/material'
 import AddIcon from '@mui/icons-material/Add'
 import { NavLink } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 export const SideNav = () => {
+  const { isAdmin } = useSelector((store) => store.auth)
+
   const getActiveStyles = ({ isActive }) =>
     isActive
       ? {
@@ -48,25 +51,27 @@ export const SideNav = () => {
             label='Movies'
           ></Chip>
         </Stack>
-        <Button
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontFamily: 'inherit',
-            fontSize: '1.5rem',
-            minWidth: '10rem',
-            borderRadius: '10px',
-            backgroundColor: 'var(--primary-dark)',
-            color: 'var(--white)',
-            '&:hover': {
-              backgroundColor: 'var(--primary-dark-hover)',
-            },
-          }}
-        >
-          <AddIcon fontSize='large' />
-          Add Movies
-        </Button>
+        {isAdmin && (
+          <Button
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontFamily: 'inherit',
+              fontSize: '1.5rem',
+              minWidth: '10rem',
+              borderRadius: '10px',
+              backgroundColor: 'var(--primary-dark)',
+              color: 'var(--white)',
+              '&:hover': {
+                backgroundColor: 'var(--primary-dark-hover)',
+              },
+            }}
+          >
+            <AddIcon fontSize='large' />
+            Add Movies
+          </Button>
+        )}
       </Stack>
     </Grid>
   )

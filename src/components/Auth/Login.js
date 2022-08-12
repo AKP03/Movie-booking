@@ -14,7 +14,11 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import CircularProgress from '@mui/material/CircularProgress'
 import VisibilityIcon from '@mui/icons-material/Visibility'
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff'
-import { loadingAuth, userLogin } from '../../redux/features/auth/authSlice'
+import {
+  loadingAuth,
+  userAdmin,
+  userLogin,
+} from '../../redux/features/auth/authSlice'
 import { loginUser } from '../../firebase/utils/auth'
 
 export const Login = ({ setSignupForm }) => {
@@ -24,7 +28,6 @@ export const Login = ({ setSignupForm }) => {
   const { isAuthLoading } = useSelector((store) => store.auth)
 
   const [showPassword, setShowPassword] = useState(false)
-  const [isAdmin, setIsAdmin] = useState(false)
 
   const toggleShowPassword = (e) => {
     e.preventDefault()
@@ -42,22 +45,10 @@ export const Login = ({ setSignupForm }) => {
       loginData.email === 'admin@gmail.com' &&
       loginData.password === 'Admin@1'
     ) {
-      setIsAdmin(true)
-    } else {
-      setIsAdmin(false)
+      dispatch(userAdmin(true))
     }
-    loginUser(
-      loginData,
-      dispatch,
-      userLogin,
-      loadingAuth,
-      navigate,
-      location,
-      isAdmin
-    )
+    loginUser(loginData, dispatch, userLogin, loadingAuth, navigate, location)
   }
-
-  console.log(isAdmin)
 
   return (
     <Container component='main' maxWidth='xs'>
